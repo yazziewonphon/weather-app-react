@@ -1,4 +1,22 @@
+.Weather h1.city-name-display {
+    color: #90A17D;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 32px;
+    line-height: 26px;
+    text-align: left;
+    margin-top: 30px;
+}
+
 .Weather ul {
     list-style: none;
     padding-left: 0;
+    color: #829460;
+    font-family: 'Roboto Mono', monospace;
+}
+img.weather-icon {
+    max-width: 64px;
+}
+h2.current-temperature-display {
+    display: inline;
+    margin-left: 15px;
 }

@@ -4,16 +4,22 @@ import './Weather.css';
 import Snowflake from "./Snowflake.svg";
 
 export default function Weather() {
-    const [ready, setReady] = useState(false);
-const [temperature, setTemperature] = useState(null);
+const [weatherData, setWeatherData] = useState({ ready: false });
 
     function handleResponse(response) {
-    console.log(response.data);
-    setTemperature(response.data.main.temp);
-    setReady(true);
+    setWeatherData({
+        ready: true,
+        temperature: response.data.main.temp,
+        wind: response.data.wind.speed,
+        city: response.data.name,
+        humidity: response.data.main.humidity,
+        iconUrl: {Snowflake},
+        description: response.data.weather[0].description,
+        date: "Friday 18:00"
+    });
 }
 
-if (ready) {
+if (weatherData.ready) {
     return(
         <div className="Weather">
             <form>
@@ -23,32 +29,32 @@ if (ready) {
                 </div>
                 </div>
                 </form>
-            <h1 className="city-name-display">Cedar Rapids</h1>
-<ul><li>Friday 18:00</li><li>Snowy</li></ul>
+            <h1 className="city-name-display">{weatherData.city}</h1>
+<ul><li>{weatherData.date}</li>
+<li className="text-capitalize">{weatherData.description}</li></ul>
 <div className="row weather-log-display">
     <div className="col-3 d-flex justify-content-start icon-and-temperature-display">
-        <img src={Snowflake} alt="Snowy" className="weather-icon" />
-        <h2 className="current-temperature-display">{temperature}
+        <img src={weatherData.iconUrl} alt={weatherData.description} className="weather-icon" />
+        <h2 className="current-temperature-display">{Math.round(weatherData.temperature)}
         <span className="unit">°F</span>
         </h2>
         </div>
         <div className="col-9 d-flex justify-content-end">
             <ul>
-                <li>Precipitation: 15%</li>
-                <li>Humidity: 72%</li>
-                <li>Wind: 13 km/h</li>
+                <li>Humidity: {weatherData.humidity}%</li>
+                <li>Wind: {weatherData.wind} km/h</li>
                 </ul>
                 </div>
                 </div>
         </div>
     );
 } else {
+    let city= "Cedar Rapids"
     const apiKey="b7c9ca10tacof91c4da4936c2801b27b";
     const apiUrl=`https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=imperial`;
-    let city="Cedar Rapids";
     axios.get(apiUrl).then(handleResponse);
 
-    return "Loading";
+    return "Loading...";
 }
 
     

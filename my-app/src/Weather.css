@@ -38,7 +38,7 @@
     align-items: center;
 }
 img.weather-icon {
-    max-width: 64px;
+    max-width: 90px;
 }
 h2.current-temperature-display {
     display: inline;

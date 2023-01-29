@@ -1,21 +1,24 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import FormattedDate from "./FormattedDate";
 import './Weather.css';
 import Snowflake from "./Snowflake.svg";
 
-export default function Weather() {
+export default function Weather(props) {
 const [weatherData, setWeatherData] = useState({ ready: false });
 
     function handleResponse(response) {
+    console.log(response.data);
+
     setWeatherData({
         ready: true,
-        temperature: response.data.main.temp,
+        temperature: response.data.temperature.current,
         wind: response.data.wind.speed,
-        city: response.data.name,
-        humidity: response.data.main.humidity,
+        city: response.data.city,
+        humidity: response.data.temperature.humidity,
         iconUrl: {Snowflake},
-        description: response.data.weather[0].description,
-        date: "Friday 18:00"
+        description: response.data.condition.description,
+        date: new Date(response.data.time * 1000)
     });
 }
 
@@ -30,8 +33,12 @@ if (weatherData.ready) {
                 </div>
                 </form>
             <h1 className="city-name-display">{weatherData.city}</h1>
-<ul><li>{weatherData.date}</li>
-<li className="text-capitalize">{weatherData.description}</li></ul>
+<ul>
+    <li><FormattedDate date={weatherData.date} />
+    </li>
+<li className="text-capitalize">{weatherData.description}
+</li>
+</ul>
 <div className="row weather-log-display">
     <div className="col-3 d-flex justify-content-start icon-and-temperature-display">
         <img src={weatherData.iconUrl} alt={weatherData.description} className="weather-icon" />
@@ -49,9 +56,8 @@ if (weatherData.ready) {
         </div>
     );
 } else {
-    let city= "Cedar Rapids"
     const apiKey="b7c9ca10tacof91c4da4936c2801b27b";
-    const apiUrl=`https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=imperial`;
+    const apiUrl=`https://api.shecodes.io/weather/v1/current?query=${props.defaultCity}&key=${apiKey}&units=imperial`;
     axios.get(apiUrl).then(handleResponse);
 
     return "Loading...";

@@ -1,0 +1,25 @@
+.WeatherInfo h1.city-name-display {
+    color: #90A17D;
+    font-size: 32px;
+    line-height: 26px;
+    text-align: left;
+    margin-top: 30px;
+    font-weight: 600;
+}
+.WeatherInfo ul {
+    list-style: none;
+    padding-left: 0;
+    color: #829460;
+    font-weight: 300;
+    line-height: 19px;
+}
+.WeatherInfo .weather-log-display {
+    margin-top: 50px;
+}
+.WeatherInfo div.icon-and-temperature-display {
+    align-items: center;
+}
+img.weather-icon {
+    max-width: 90px;
+    margin-top: -9px;
+}

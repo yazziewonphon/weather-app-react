@@ -1,3 +1,9 @@
+:root {
+  --primary-color: #829460;
+  --secondary-color: #90a17d;
+  --accent-color: #e8f3d6;
+}
+
 body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
@@ -5,9 +11,8 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,600;1,300&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,600;1,300&display=swap");

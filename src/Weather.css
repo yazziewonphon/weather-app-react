@@ -1,20 +1,18 @@
 .Weather {
-    padding: 16px;
-    margin: 10px auto;
-    font-family: 'Roboto Mono', monospace;
+  padding: 16px;
+  margin: 10px auto;
+  font-family: "Roboto Mono", monospace;
 }
 .Weather input.form-control {
-    border-color: #829460;
-    color: #829460 !important;
+  border-color: var(--primary-color);
+  color: var(--primary-color);
 }
 .Weather input.btn-primary {
-    border-color: #829460;
-    background-color: transparent;
-    color: #829460;
+  border-color: var(--primary-color);
+  background-color: transparent;
+  color: var(--primary-color);
 }
 .Weather input.btn-primary:hover {
-    background-color: #829460;
-    color: white;
+  background-color: var(--primary-color);
+  color: white;
 }
-
-

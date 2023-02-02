@@ -1,13 +1,13 @@
 .weatherTemperature h2.current-temperature-display {
-    display: inline;
-    margin-left: 15px;
-    color: #829460;
-    font-weight: 600;
-    font-size: 36px;
+  display: inline;
+  margin-left: 15px;
+  color: var(--primary-color);
+  font-weight: 600;
+  font-size: 36px;
 }
 .weatherTemperature .unit {
-    font-size: 14px;
-    position: relative;
-    top:-15px;
-    left: 5px;
+  font-size: 14px;
+  position: relative;
+  top: -15px;
+  left: 5px;
 }

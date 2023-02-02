@@ -1,16 +1,15 @@
 .App {
   margin: 0 auto;
   max-width: 700px;
-  font-family: 'Roboto Mono', monospace;
-
+  font-family: "Roboto Mono", monospace;
 }
 .App .container {
-  border: 1px solid #E8F3D6;
+  border: 1px solid var(--accent-color);
   margin: 50px auto 0;
   max-width: 700px;
   border-radius: 4px;
 }
 .App footer {
-font-size: 14px;
-color: #829460;
+  font-size: 14px;
+  color: var(--primary-color);
 }

@@ -9,9 +9,19 @@ function App() {
       </div>
       <footer>
         This project was coded by{" "}
-        <a href="https://whimsical-strudel-6a6040.netlify.app/">Olive Phan</a>{" "}
+        <a
+          href="https://whimsical-strudel-6a6040.netlify.app/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Olive Phan
+        </a>{" "}
         and is{" "}
-        <a href="https://github.com/yazziewonphon/weather-app-react">
+        <a
+          href="https://github.com/yazziewonphon/weather-app-react"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           open-sourced.
         </a>
       </footer>
